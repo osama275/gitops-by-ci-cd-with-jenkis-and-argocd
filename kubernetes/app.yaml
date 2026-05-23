@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: project-k8s12
-        image: osama57415/nodejs01:${IMAGE_TAG}
+        image: osama57415/nodejs01:3
         ports:
         - containerPort: 3000
 
