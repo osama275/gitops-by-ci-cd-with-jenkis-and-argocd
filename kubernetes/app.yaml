@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: project-k8s12
 spec:
-  replicas: 150
+  replicas: 6
   selector:
     matchLabels:
       app: project-k8s12
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: project-k8s12
-        image: 3booda24/nodejs8:3
+        image: osama57415/nodejs01:${IMAGE_TAG}
         ports:
         - containerPort: 3000
 
@@ -26,7 +26,7 @@ kind: Service
 metadata:
   name: project-k8s12
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: project-k8s12
   ports:
